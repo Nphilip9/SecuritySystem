@@ -35,10 +35,10 @@ public class Main {
                 for (int i = 1; i <= folderNamesList.size() - 1; i++) {
                     System.out.println("yes");
                     if(!new File(folderNamesList.get(i)).isFile()) {
-                        String[] allPathsSplitted = folderNamesList.get(i).split("/");
-                        String dirPath = encryptedDir + "/" + allPathsSplitted[pathSplitted.length + 1];
+                        String[] allPathsSplit = folderNamesList.get(i).split("/");
+                        String dirPath = encryptedDir + "/" + allPathsSplit[pathSplitted.length + 1];
                         boolean createDir = new File(dirPath).mkdir();
-                        System.out.println(Arrays.toString(allPathsSplitted) + encryptedDir);
+                        System.out.println(Arrays.toString(allPathsSplit) + encryptedDir);
                         if (createDir) {
                             System.out.println("Created");
                         }
@@ -47,18 +47,18 @@ public class Main {
             }
         }
 
-            /*if(new File(path).canRead()) {
-                if (securityMode == ConstantVariables.SECURITY_MODE_ENCRYPTION) {
-                    callPythonFile(ConstantVariables.SECURITY_MODE_ENCRYPTION, path, password);
-                } else if (securityMode == ConstantVariables.SECURITY_MODE_DECRYPTION) {
-                    callPythonFile(ConstantVariables.SECURITY_MODE_DECRYPTION, path, password);
-                } else {
-                    JOptionPane.showMessageDialog(frame, ConstantVariables.GENERAL_ERRORS[0], ConstantVariables.JOPTIONPANE_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
-                }
+        if(new File(path).canRead()) {
+            if (securityMode == ConstantVariables.SECURITY_MODE_ENCRYPTION) {
+                callPythonFile(ConstantVariables.SECURITY_MODE_ENCRYPTION, path, password);
+            } else if (securityMode == ConstantVariables.SECURITY_MODE_DECRYPTION) {
+                callPythonFile(ConstantVariables.SECURITY_MODE_DECRYPTION, path, password);
             } else {
-                JOptionPane.showMessageDialog(frame, ConstantVariables.GENERAL_ERRORS[1], ConstantVariables.JOPTIONPANE_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, ConstantVariables.GENERAL_ERRORS[0], ConstantVariables.JOPTIONPANE_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(frame, ConstantVariables.GENERAL_ERRORS[1], ConstantVariables.JOPTIONPANE_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
         }
+    }
 
     private static void callPythonFile(int securityMode, String path, String password) {
         Thread pythonThread = new Thread(() -> {
@@ -86,6 +86,6 @@ public class Main {
                 e.printStackTrace();
             }
         });
-        pythonThread.start();*/
+        pythonThread.start();
     }
 }
