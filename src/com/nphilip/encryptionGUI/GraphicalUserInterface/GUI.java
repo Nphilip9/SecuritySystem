@@ -9,8 +9,12 @@ import java.io.IOException;
 
 public class GUI {
 
-    public static void window() {
-        JFrame frame = new JFrame("encryption");
+    /**
+     * creates the JFrame GUI
+     * @param title: String
+     */
+    public static void window(String title) {
+        JFrame frame = new JFrame(title);
         JButton submitButton = new JButton("Submit");
         JButton setPath = new JButton("Set Path");
         JLabel pathText = new JLabel("Path");

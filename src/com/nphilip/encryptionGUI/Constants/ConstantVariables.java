@@ -7,7 +7,7 @@ public class ConstantVariables {
     public static final int SECURITY_MODE_DECRYPTION = 2;
 
     // Python security File Path
-    public static final String PYTHON_SECURITY_FILE_PATH = "src/com/nphilip/encryptionGUI/Security/SecurityManager.py";
+    public static final String PYTHON_SECURITY_FILE_PATH = "src/com/nphilip/encryptionGUI/Security/Main.py";
 
     // Error Messages List in GUI
     public static final String[] ERROR_MESSAGES_GUI = {

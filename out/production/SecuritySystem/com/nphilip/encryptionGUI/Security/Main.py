@@ -39,7 +39,7 @@ def main():
         mainPathLength = len(path.split("/")) - 1
         outputPath = path
         outputPath = outputPath.replace(outputPath.split("/")[mainPathLength], outputPath.split("/")[mainPathLength] + folderSecurityModeDescriptor).replace("\\", "/") + pathToAppend
-        SecurityManager.startSecurityProcess(password, file, outputPath, int(securityMode))
+        SecurityManager.startSecurityProcess(password, path, file, int(securityMode))
         print(outputPath)
 
 if __name__ == '__main__':
